@@ -1,3 +1,3 @@
 ./gendocs.sh
-#git cm 'update pycco comments'
-#git push
+git cm 'update pycco comments'
+git push

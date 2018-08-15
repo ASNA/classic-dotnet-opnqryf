@@ -1,4 +1,11 @@
-﻿Using System
+﻿
+// [Return to repo](https://github.com/ASNA/classic-dotnet-opnqryf)
+// ### AVR for .NET program to read a file. v1.0
+// ---
+// 
+// ---
+
+Using System
 Using System.Collections
 Using System.ComponentModel
 Using System.Data
@@ -41,9 +48,8 @@ BegClass formMain Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Ye
 
         labelRecordsRead.Text = String.Empty 
         Connect pgmDB 
-        
-		// Occurs when form is first loaded.
-		// Put form "startup" code here (ie open files).
+        // With OpnQryF, you can't open the file until you set the QrlSelect and QryKeyFlds
+        // files. 
 	EndSr
 
 	BegSr Form1_FormClosing Access(*Private) Event(*this.FormClosing)
@@ -52,9 +58,6 @@ BegClass formMain Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Ye
 
         Disconnect pgmDB 
         Close *All 
-        
-		// Occurs when form is closing.    
-		// Put form "housecleaning" code here (ie close files).
 	EndSr
 
 	BegSr buttonRead_Click Access(*Private) Event(*this.buttonRead.Click)
