@@ -3,9 +3,9 @@ DCLFORM // formMain
 INITPROP NAME(_Version) TYPE(*INTEGER4) VALUE(131181)
 INITPROP NAME(Caption) TYPE(*BASICSTRING) VALUE('OpenQueryFile')
 INITPROP NAME(Height) TYPE(*INTEGER4) VALUE(7695)
-INITPROP NAME(Left) TYPE(*INTEGER4) VALUE(-24555)
+INITPROP NAME(Left) TYPE(*INTEGER4) VALUE(13800)
 INITPROP NAME(Name) TYPE(*BASICSTRING) VALUE('formMain')
-INITPROP NAME(Top) TYPE(*INTEGER4) VALUE(2595)
+INITPROP NAME(Top) TYPE(*INTEGER4) VALUE(1500)
 INITPROP NAME(Width) TYPE(*INTEGER4) VALUE(9105)
 DCLPROP NAME(Font) TYPE(*BLOBPROPSET) CLSID('{0BE35203-8F91-11CE-9DE3-00AA004BB851}')
 INITPROP NAME(Name) TYPE(*BASICSTRING) VALUE('Source Sans Pro')
@@ -18,7 +18,7 @@ INITPROP NAME(Strikethrough) TYPE(*BOOLEAN) VALUE(0)
 ENDPROP
 INITPROP NAME(StartUpPosition) TYPE(*INTEGER2) VALUE(1)
 INITPROP NAME(CreationID) TYPE(*BASICSTRING) VALUE('{5C7331B9-55B3-4D6A-8080-D3C530535B9A}')
-INITPROP NAME(ModifiedID) TYPE(*BASICSTRING) VALUE('{A95277AA-F791-4640-A165-310F8E0462BB}')
+INITPROP NAME(ModifiedID) TYPE(*BASICSTRING) VALUE('{D401D734-2C3E-4042-ABB0-B516BFC59B3A}')
 DCLMENU PARENT(formMain) // mnuForm1
 INITPROP NAME(_Version) TYPE(*INTEGER4) VALUE(131176)
 INITPROP NAME(Name) TYPE(*BASICSTRING) VALUE('mnuForm1')
@@ -81,7 +81,7 @@ DCLCTL CLSID('{9A541647-88B8-11CF-A6E2-00801E0111FB}') PARENT(formMain) // label
 INITPROP NAME(Version) TYPE(*INTEGER4) VALUE(131181)
 INITPROP NAME(_PersistType) TYPE(*INTEGER2) VALUE(3)
 INITPROP NAME(Height) TYPE(*INTEGER4) VALUE(330)
-INITPROP NAME(Left) TYPE(*INTEGER4) VALUE(1170)
+INITPROP NAME(Left) TYPE(*INTEGER4) VALUE(360)
 INITPROP NAME(Name) TYPE(*BASICSTRING) VALUE('labelRecordsRead')
 INITPROP NAME(Top) TYPE(*INTEGER4) VALUE(6120)
 INITPROP NAME(Width) TYPE(*INTEGER4) VALUE(1515)
@@ -95,6 +95,15 @@ INITPROP NAME(_ExtentX) TYPE(*INTEGER4) VALUE(2672)
 INITPROP NAME(_ExtentY) TYPE(*INTEGER4) VALUE(582)
 INITPROP NAME(_StockProps) TYPE(*INTEGER4) VALUE(111)
 INITPROP NAME(Caption) TYPE(*BASICSTRING) VALUE('[RecordsRead]')
+DCLPROP NAME(Font) TYPE(*BLOBPROPSET) CLSID('{0BE35203-8F91-11CE-9DE3-00AA004BB851}')
+INITPROP NAME(Name) TYPE(*BASICSTRING) VALUE('Source Sans Pro')
+INITPROP NAME(Size) TYPE(*CURRENCY) VALUE('12')
+INITPROP NAME(Charset) TYPE(*INTEGER2) VALUE(0)
+INITPROP NAME(Weight) TYPE(*INTEGER2) VALUE(400)
+INITPROP NAME(Underline) TYPE(*BOOLEAN) VALUE(0)
+INITPROP NAME(Italic) TYPE(*BOOLEAN) VALUE(0)
+INITPROP NAME(Strikethrough) TYPE(*BOOLEAN) VALUE(0)
+ENDPROP
 INITPROP NAME(AutoSize) TYPE(*BOOLEAN) VALUE(-1)
 DCLCTL CLSID('{9A54164B-88B8-11CF-A6E2-00801E0111FB}') PARENT(formMain) // textboxQKeys
 INITPROP NAME(Version) TYPE(*INTEGER4) VALUE(131181)
@@ -170,6 +179,15 @@ INITPROP NAME(_ExtentX) TYPE(*INTEGER4) VALUE(2223)
 INITPROP NAME(_ExtentY) TYPE(*INTEGER4) VALUE(582)
 INITPROP NAME(_StockProps) TYPE(*INTEGER4) VALUE(111)
 INITPROP NAME(Caption) TYPE(*BASICSTRING) VALUE('QuerySelect')
+DCLPROP NAME(Font) TYPE(*BLOBPROPSET) CLSID('{0BE35203-8F91-11CE-9DE3-00AA004BB851}')
+INITPROP NAME(Name) TYPE(*BASICSTRING) VALUE('Source Sans Pro')
+INITPROP NAME(Size) TYPE(*CURRENCY) VALUE('12')
+INITPROP NAME(Charset) TYPE(*INTEGER2) VALUE(0)
+INITPROP NAME(Weight) TYPE(*INTEGER2) VALUE(400)
+INITPROP NAME(Underline) TYPE(*BOOLEAN) VALUE(0)
+INITPROP NAME(Italic) TYPE(*BOOLEAN) VALUE(0)
+INITPROP NAME(Strikethrough) TYPE(*BOOLEAN) VALUE(0)
+ENDPROP
 INITPROP NAME(AutoSize) TYPE(*BOOLEAN) VALUE(-1)
 DCLCTL CLSID('{9A541647-88B8-11CF-A6E2-00801E0111FB}') PARENT(formMain) // Label2
 INITPROP NAME(Version) TYPE(*INTEGER4) VALUE(131181)
@@ -189,6 +207,15 @@ INITPROP NAME(_ExtentX) TYPE(*INTEGER4) VALUE(2514)
 INITPROP NAME(_ExtentY) TYPE(*INTEGER4) VALUE(582)
 INITPROP NAME(_StockProps) TYPE(*INTEGER4) VALUE(111)
 INITPROP NAME(Caption) TYPE(*BASICSTRING) VALUE('QueryKeyFlds')
+DCLPROP NAME(Font) TYPE(*BLOBPROPSET) CLSID('{0BE35203-8F91-11CE-9DE3-00AA004BB851}')
+INITPROP NAME(Name) TYPE(*BASICSTRING) VALUE('Source Sans Pro')
+INITPROP NAME(Size) TYPE(*CURRENCY) VALUE('12')
+INITPROP NAME(Charset) TYPE(*INTEGER2) VALUE(0)
+INITPROP NAME(Weight) TYPE(*INTEGER2) VALUE(400)
+INITPROP NAME(Underline) TYPE(*BOOLEAN) VALUE(0)
+INITPROP NAME(Italic) TYPE(*BOOLEAN) VALUE(0)
+INITPROP NAME(Strikethrough) TYPE(*BOOLEAN) VALUE(0)
+ENDPROP
 INITPROP NAME(AutoSize) TYPE(*BOOLEAN) VALUE(-1)
 DCLCTL CLSID('{9A541647-88B8-11CF-A6E2-00801E0111FB}') PARENT(formMain) // Label3
 INITPROP NAME(Version) TYPE(*INTEGER4) VALUE(131181)
@@ -210,7 +237,7 @@ INITPROP NAME(_StockProps) TYPE(*INTEGER4) VALUE(111)
 INITPROP NAME(Caption) TYPE(*BASICSTRING) VALUE('Demonstrate AVR Classic''s OpenQueryFile ')
 DCLPROP NAME(Font) TYPE(*BLOBPROPSET) CLSID('{0BE35203-8F91-11CE-9DE3-00AA004BB851}')
 INITPROP NAME(Name) TYPE(*BASICSTRING) VALUE('Source Sans Pro')
-INITPROP NAME(Size) TYPE(*CURRENCY) VALUE('15.75')
+INITPROP NAME(Size) TYPE(*CURRENCY) VALUE('15.74')
 INITPROP NAME(Charset) TYPE(*INTEGER2) VALUE(0)
 INITPROP NAME(Weight) TYPE(*INTEGER2) VALUE(400)
 INITPROP NAME(Underline) TYPE(*BOOLEAN) VALUE(0)
@@ -220,39 +247,65 @@ ENDPROP
 INITPROP NAME(Alignment) TYPE(*INTEGER2) VALUE(2)
 INITPROP NAME(AutoSize) TYPE(*BOOLEAN) VALUE(-1)
 END
+
+// [Return to repo](https://github.com/ASNA/classic-dotnet-opnqryf)
+// ### AVR Classic program to demonstrate OpnQryF v1.0
+// ---
+// ![](screen-shot-01.png?1)
+// ---
+
+// Using OpnQryF with AVR Classic requires the use of the QryFileName,
+// QryKeyFlds, and QrySelect keywords. You must use `ImpOpen(*No)` 
+// with OpnQryF--open the file after assigning the QryKeyFlds and 
+// QrySelect values. Always use `'*UNIQUE'` for the `QryFilename.`
 DclDiskFile Customer +
             Type(*Input) + 
             Org(*Indexed) +
             DBDesc("*Public/DG NET Local") +
             FileDesc("Examples/CMastNewL1") +
             ImpOpen(*NO) +
-            Qryfilename("UNIQUE") +   
+            Qryfilename('*UNIQUE') +   
             QryKeyFlds(Qkeys) +
             QrySelect(Qselect)
 
+// Global variables to hold the query select and query key fields. 
 DclFld QKeys Type(*String) 
 DclFld QSelect Type(*String) 
 
-labelRecordsRead = ''
-ResetQueryParms()
+// Initialize program.
+// Avoid the use of default properties in AVR Classic
+// because .NET doesn't have default properties. 
+labelRecordsRead.Caption = ''
 
+ResetQueryParms()
+                         
 BEGSR buttonRead Click
+    // Assign query values. 
     QSelect = textboxQSelect.Text 
     QKeys = textboxQKeys.Text 
 
+    // Check for errors with %Error built-in function 
+    // and the *Err object. Be sure to use Err(*Extended) 
+    // with the `Open`. 
     Open Customer Err(*Extended)
-    If %Error
+    If %Error()        
+        // *Err.Type = 1 then a DataGate DB error occurred. 
+        // See *Err listed in the help with the *App error object.
         If *Err.Type = 1
-            MsgBox Title('A DB error occurred')+ 
+        // 
+            MsgBox Title('A DB error occurred') + 
                    Msg('Desc: ' + *Err.Description)
         Else 
+        // A general error occurred.
             MsgBox Title('An error occured') + 
                    Msg('Desc: ' + *Err.Description)
         EndIf 
         LeaveSr 
     EndIf 
 
+    // Show query results.
     ReadFile() 
+    // Close file and reset query values.
     Close Customer 
     ResetQueryParms()
 ENDSR
@@ -262,19 +315,26 @@ BegSr ResetQueryParms
     QKeys = "*FILE"
 EndSr
 
+// Read the file.
 BegSr ReadFile 
     DclFld CustomerEOF Type(*Ind) 
     DclFld Counter Type(*Integer) Len(4)
 
+    // Clear the listbox.
     listboxStates.ClearObj()
     Counter = 0
 
+    // Loop over all selected rows of the file. 
+    // Prime-the-pump read.
     Read Customer EOF(CustomerEOF) 
     DoWhile (NOT CustomerEOF)
         Counter = Counter + 1
+        // Add an entry in the listbox to show the record was read.
         listboxStates.AddItem(%Trim(CMCity) + ", " + CMState)
+        // Read next record.
         Read Customer EOF(CustomerEOF) 
     EndDo 
 
+    // Show number of records read.
     labelRecordsRead.Caption = 'Records read: ' + %Trim(%EditC(Counter, "1"))
 EndSr

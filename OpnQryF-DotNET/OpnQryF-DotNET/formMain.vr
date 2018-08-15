@@ -2,7 +2,7 @@
 // [Return to repo](https://github.com/ASNA/classic-dotnet-opnqryf)
 // ### AVR for .NET program to demonstrate OpnQryF v1.0
 // ---
-// 
+// ![](screen-shot-01.png)
 // ---
 
 Using System
@@ -19,20 +19,19 @@ BegClass formMain Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Ye
 	
 	BegConstructor Access(*Public)
 		//
-		// Required for Windows Form Designer support
+		// Required for Windows Form Designer support--don't mess with it! 
 		//
 		InitializeComponent()
-
-		//
-		// TODO: Add any constructor code after InitializeComponent call
-		//
 	EndConstructor
 
 	/endregion
 
     DclDB pgmDB DBName("*Public/DG Net Local") 
 
-    // A file opened for read-only purposes. 
+    // A file declared for read-only purposes. With AVR for .NET the OpnQryF 
+    // arguments aren't keywords, rather they are properties on the file object. 
+    // At this point in this program there isn't anything about this file 
+    // that makes it unique to OpnQryF.'
     DclDiskFile  Customer +
           Type(*Input) +
           Org(*Indexed) +
@@ -42,29 +41,35 @@ BegClass formMain Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Ye
           ImpOpen(*No) + 
 		  RnmFmt(CUSTRO)
 
+    // Works like *INZSR.             
 	BegSr Form1_Load Access(*Private) Event(*this.Load)
 		DclSrParm sender *Object
 		DclSrParm e System.EventArgs
 
+        // AVR Classic uses the 'Caption' property! 
         labelRecordsRead.Text = String.Empty 
         Connect pgmDB 
-        // With OpnQryF, you can't open the file until you set the QrlSelect and QryKeyFlds
-        // files. 
+        // When you're using OpnQryF, the query arguments don't take effect
+        // until you open the file. We'll defer the file open for a bit. 
 	EndSr
 
 	BegSr Form1_FormClosing Access(*Private) Event(*this.FormClosing)
 		DclSrParm sender Type(*Object)
 		DclSrParm e Type(System.Windows.Forms.FormClosingEventArgs)
 
-        Disconnect pgmDB 
+        // Close all files and disconnect as the form goes out of scope.            
         Close *All 
+        Disconnect pgmDB 
 	EndSr
 
 	BegSr buttonRead_Click Access(*Private) Event(*this.buttonRead.Click)
 		DclSrParm sender Type(*Object)
 		DclSrParm e Type(System.EventArgs)
 
+        // Generally you'll always use `'*Unique'` for the OpnQryF file name.
+        // This ensures unique file names for any temp files generated.
         Customer.QryFileName = '*Unique'
+        // Assign the QrySelect and QryKeyField properties to the file.
         Customer.QrySelect = textboxQSelect.Text
         Customer.QryKeyFlds = textboxQKeyFlds.Text 
 
@@ -74,13 +79,20 @@ BegClass formMain Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Ye
         // right. This isn't the most graceful use of exception catching,
         // but it's a good start. 
         Try 
+            // The OpnQryF occurs when the file is opened. The Try/Catch
+            // is primary to catch OpnQryF errors--which will occur when
+            // the file is opened.
             Open Customer 
+        // This first catch checks explicitly for ASNA DataGate exceptions. 
+        // This is useful just so you can explicitly identify the type of error.
         Catch exdb Type(ASNA.VisualRPG.Runtime.DataGateException) 
             MsgBox Title('A database error occurred') Msg(exdb.Message) 
             LeaveSr 
-        Catch  ex Type(System.Exception)
-            msgBox ex.GetType().ToString()
-            MsgBox Title('An error occurred') Msg(ex.Message) 
+        // If the error wasn't DataGate-related, catch the general error 
+        // here. In many cases, checking for the general System.Exception
+        // provides good enough error handling.
+        Catch ex Type(System.Exception)
+            MsgBox Title('An error occurred') Msg(ex.Message)
             LeaveSr 
         EndTry 
 
@@ -88,6 +100,7 @@ BegClass formMain Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Ye
         Close Customer 
 	EndSr
 
+    // Result OpnQryF properties back to no OpnQryF applied.
     BegSr ResetQueryParms
         Customer.QrySelect = ""
         Customer.QryKeyFlds = "*FILE"
@@ -97,16 +110,19 @@ BegClass formMain Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Ye
         DclFld Counter Type(*Integer) Len(4)
 
         Counter = 0
-
         listboxStates.Items.Clear()
 
+        // Loop over customer file. 
+        // If OpnQryF is in effect, only the selected rows are read. 
         Read Customer
         DoWhile (NOT Customer.IsEof)
             Counter = Counter + 1
+            // Show values from record read.
             listboxStates.Items.Add(Customer_CMCity.Trim() + ", " + Customer_CMState)
             Read Customer
         EndDo 
 
+        // Notice the numeric formatting applied with ToString. Check this [MS link for more info.](https://is.gd/6r99II)
         labelRecordsRead.Text = 'Records read: ' + Counter.ToString("#")
     EndSr
 	

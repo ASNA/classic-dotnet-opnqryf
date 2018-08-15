@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>formMain.vr.annotated</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>formMain.vr.annotated</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p><a href="https://github.com/ASNA/classic-dotnet-opnqryf">Return to repo</a></p>
+<h3>AVR for .NET program to demonstrate OpnQryF v1.0</h3>
+<hr />
+<h2><img alt="" src="screen-shot-01.png" /></h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nx">Using</span> <span class="nx">System</span>
+<span class="nx">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Collections</span>
+<span class="nx">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">ComponentModel</span>
+<span class="nx">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Data</span>
+<span class="nx">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span>
+<span class="nx">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Text</span>
+<span class="nx">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span>
+
+<span class="nx">BegClass</span> <span class="nx">formMain</span> <span class="nx">Extends</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Form</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">Partial</span><span class="p">(</span><span class="o">*</span><span class="nx">Yes</span><span class="p">)</span>
+
+    <span class="o">/</span><span class="nx">region</span> <span class="nx">Default</span> <span class="nx">Constructor</span>
+    
+    <span class="nx">BegConstructor</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>Required for Windows Form Designer support--don't mess with it! </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">InitializeComponent</span><span class="p">()</span>
+    <span class="nx">EndConstructor</span>
+
+    <span class="o">/</span><span class="nx">endregion</span>
+
+    <span class="nx">DclDB</span> <span class="nx">pgmDB</span> <span class="nx">DBName</span><span class="p">(</span><span class="s2">&quot;*Public/DG Net Local&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>A file declared for read-only purposes. With AVR for .NET the OpnQryF 
+arguments aren't keywords, rather they are properties on the file object. 
+At this point in this program there isn't anything about this file 
+that makes it unique to OpnQryF.'</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="nx">DclDiskFile</span>  <span class="nx">Customer</span> <span class="o">+</span>
+          <span class="nx">Type</span><span class="p">(</span><span class="o">*</span><span class="nx">Input</span><span class="p">)</span> <span class="o">+</span>
+          <span class="nx">Org</span><span class="p">(</span><span class="o">*</span><span class="nx">Indexed</span><span class="p">)</span> <span class="o">+</span>
+          <span class="nx">Prefix</span><span class="p">(</span><span class="nx">Customer_</span><span class="p">)</span> <span class="o">+</span>
+          <span class="nx">File</span><span class="p">(</span><span class="s2">&quot;Examples/CMastNewL1&quot;</span><span class="p">)</span> <span class="o">+</span>
+          <span class="nx">DB</span><span class="p">(</span><span class="nx">pgmDB</span><span class="p">)</span> <span class="o">+</span>
+          <span class="nx">ImpOpen</span><span class="p">(</span><span class="o">*</span><span class="nx">No</span><span class="p">)</span> <span class="o">+</span> 
+          <span class="nx">RnmFmt</span><span class="p">(</span><span class="nx">CUSTRO</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Works like *INZSR.             </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="nx">BegSr</span> <span class="nx">Form1_Load</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span> <span class="nx">Event</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">Load</span><span class="p">)</span>
+        <span class="nx">DclSrParm</span> <span class="nx">sender</span> <span class="o">*</span><span class="nb">Object</span>
+        <span class="nx">DclSrParm</span> <span class="nx">e</span> <span class="nx">System</span><span class="p">.</span><span class="nx">EventArgs</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>AVR Classic uses the 'Caption' property! </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">labelRecordsRead</span><span class="p">.</span><span class="nx">Text</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">Empty</span> 
+        <span class="nx">Connect</span> <span class="nx">pgmDB</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>When you're using OpnQryF, the query arguments don't take effect
+until you open the file. We'll defer the file open for a bit. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="nx">EndSr</span>
+
+    <span class="nx">BegSr</span> <span class="nx">Form1_FormClosing</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span> <span class="nx">Event</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">FormClosing</span><span class="p">)</span>
+        <span class="nx">DclSrParm</span> <span class="nx">sender</span> <span class="nx">Type</span><span class="p">(</span><span class="o">*</span><span class="nb">Object</span><span class="p">)</span>
+        <span class="nx">DclSrParm</span> <span class="nx">e</span> <span class="nx">Type</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">FormClosingEventArgs</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>Close all files and disconnect as the form goes out of scope.            </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Close</span> <span class="o">*</span><span class="nx">All</span> 
+        <span class="nx">Disconnect</span> <span class="nx">pgmDB</span> 
+    <span class="nx">EndSr</span>
+
+    <span class="nx">BegSr</span> <span class="nx">buttonRead_Click</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span> <span class="nx">Event</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">buttonRead</span><span class="p">.</span><span class="nx">Click</span><span class="p">)</span>
+        <span class="nx">DclSrParm</span> <span class="nx">sender</span> <span class="nx">Type</span><span class="p">(</span><span class="o">*</span><span class="nb">Object</span><span class="p">)</span>
+        <span class="nx">DclSrParm</span> <span class="nx">e</span> <span class="nx">Type</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">EventArgs</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Generally you'll always use <code>'*Unique'</code> for the OpnQryF file name.
+This ensures unique file names for any temp files generated.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Customer</span><span class="p">.</span><span class="nx">QryFileName</span> <span class="o">=</span> <span class="s1">&#39;*Unique&#39;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Assign the QrySelect and QryKeyField properties to the file.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Customer</span><span class="p">.</span><span class="nx">QrySelect</span> <span class="o">=</span> <span class="nx">textboxQSelect</span><span class="p">.</span><span class="nx">Text</span>
+        <span class="nx">Customer</span><span class="p">.</span><span class="nx">QryKeyFlds</span> <span class="o">=</span> <span class="nx">textboxQKeyFlds</span><span class="p">.</span><span class="nx">Text</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>AVR for .NET uses exception handling to catch errors. 
+It's especially important to check for exception errors
+when you're using OpnQryF--it can be quite fiddly to get 
+right. This isn't the most graceful use of exception catching,
+but it's a good start. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Try</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>The OpnQryF occurs when the file is opened. The Try/Catch
+is primary to catch OpnQryF errors--which will occur when
+the file is opened.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">Open</span> <span class="nx">Customer</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>This first catch checks explicitly for ASNA DataGate exceptions. 
+This is useful just so you can explicitly identify the type of error.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Catch</span> <span class="nx">exdb</span> <span class="nx">Type</span><span class="p">(</span><span class="nx">ASNA</span><span class="p">.</span><span class="nx">VisualRPG</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">.</span><span class="nx">DataGateException</span><span class="p">)</span> 
+            <span class="nx">MsgBox</span> <span class="nx">Title</span><span class="p">(</span><span class="s1">&#39;A database error occurred&#39;</span><span class="p">)</span> <span class="nx">Msg</span><span class="p">(</span><span class="nx">exdb</span><span class="p">.</span><span class="nx">Message</span><span class="p">)</span> 
+            <span class="nx">LeaveSr</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>If the error wasn't DataGate-related, catch the general error 
+here. In many cases, checking for the general System.Exception
+provides good enough error handling.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Catch</span> <span class="nx">ex</span> <span class="nx">Type</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Exception</span><span class="p">)</span>
+            <span class="nx">MsgBox</span> <span class="nx">Title</span><span class="p">(</span><span class="s1">&#39;An error occurred&#39;</span><span class="p">)</span> <span class="nx">Msg</span><span class="p">(</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Message</span><span class="p">)</span>
+            <span class="nx">LeaveSr</span> 
+        <span class="nx">EndTry</span> 
+
+        <span class="nx">ReadFile</span><span class="p">()</span>
+        <span class="nx">Close</span> <span class="nx">Customer</span> 
+    <span class="nx">EndSr</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>Result OpnQryF properties back to no OpnQryF applied.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="nx">BegSr</span> <span class="nx">ResetQueryParms</span>
+        <span class="nx">Customer</span><span class="p">.</span><span class="nx">QrySelect</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="nx">Customer</span><span class="p">.</span><span class="nx">QryKeyFlds</span> <span class="o">=</span> <span class="s2">&quot;*FILE&quot;</span>
+    <span class="nx">EndSr</span>
+
+    <span class="nx">BegSr</span> <span class="nx">ReadFile</span> 
+        <span class="nx">DclFld</span> <span class="nx">Counter</span> <span class="nx">Type</span><span class="p">(</span><span class="o">*</span><span class="nx">Integer</span><span class="p">)</span> <span class="nx">Len</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="nx">Counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nx">listboxStates</span><span class="p">.</span><span class="nx">Items</span><span class="p">.</span><span class="nx">Clear</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>Loop over customer file. 
+If OpnQryF is in effect, only the selected rows are read. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Read</span> <span class="nx">Customer</span>
+        <span class="nx">DoWhile</span> <span class="p">(</span><span class="nx">NOT</span> <span class="nx">Customer</span><span class="p">.</span><span class="nx">IsEof</span><span class="p">)</span>
+            <span class="nx">Counter</span> <span class="o">=</span> <span class="nx">Counter</span> <span class="o">+</span> <span class="mi">1</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>Show values from record read.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">listboxStates</span><span class="p">.</span><span class="nx">Items</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">Customer_CMCity</span><span class="p">.</span><span class="nx">Trim</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nx">Customer_CMState</span><span class="p">)</span>
+            <span class="nx">Read</span> <span class="nx">Customer</span>
+        <span class="nx">EndDo</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>Notice the numeric formatting applied with ToString. Check this <a href="https://is.gd/6r99II">MS link for more info.</a></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">labelRecordsRead</span><span class="p">.</span><span class="nx">Text</span> <span class="o">=</span> <span class="s1">&#39;Records read: &#39;</span> <span class="o">+</span> <span class="nx">Counter</span><span class="p">.</span><span class="nx">ToString</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span>
+    <span class="nx">EndSr</span>
+    
+<span class="nx">EndClass</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
