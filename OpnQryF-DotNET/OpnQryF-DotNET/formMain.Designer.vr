@@ -1,0 +1,132 @@
+﻿BegClass formMain Partial(*Yes)
+
+	// Required method for Designer support - do not modify
+	// the contents of this method with the code editor.
+	BegSr InitializeComponent
+		*this.buttonRead = *new System.Windows.Forms.Button()
+		*this.textboxQSelect = *new System.Windows.Forms.TextBox()
+		*this.textboxQKeyFlds = *new System.Windows.Forms.TextBox()
+		*this.labelRecordsRead = *new System.Windows.Forms.Label()
+		*this.listboxStates = *new System.Windows.Forms.ListBox()
+		*this.label1 = *new System.Windows.Forms.Label()
+		*this.label2 = *new System.Windows.Forms.Label()
+		*this.label3 = *new System.Windows.Forms.Label()
+		*this.SuspendLayout()
+		//
+		//buttonRead
+		//
+		*this.buttonRead.Location = *new System.Drawing.Point(443I, 298I)
+		*this.buttonRead.Name = "buttonRead"
+		*this.buttonRead.Size = *new System.Drawing.Size(100I, 43I)
+		*this.buttonRead.TabIndex = 0I
+		*this.buttonRead.Text = "Read"
+		*this.buttonRead.UseVisualStyleBackColor = *True
+		//
+		//textboxQSelect
+		//
+		*this.textboxQSelect.Location = *new System.Drawing.Point(92I, 110I)
+		*this.textboxQSelect.Name = "textboxQSelect"
+		*this.textboxQSelect.Size = *new System.Drawing.Size(451I, 28I)
+		*this.textboxQSelect.TabIndex = 1I
+		*this.textboxQSelect.Text = "CMState >= 'A' & CMState < 'B'"
+		//
+		//textboxQKeyFlds
+		//
+		*this.textboxQKeyFlds.Location = *new System.Drawing.Point(92I, 172I)
+		*this.textboxQKeyFlds.Name = "textboxQKeyFlds"
+		*this.textboxQKeyFlds.Size = *new System.Drawing.Size(451I, 28I)
+		*this.textboxQKeyFlds.TabIndex = 2I
+		*this.textboxQKeyFlds.Text = "CMState *ASCEND CMCity *ASCEND"
+		//
+		//labelRecordsRead
+		//
+		*this.labelRecordsRead.AutoSize = *True
+		*this.labelRecordsRead.Location = *new System.Drawing.Point(92I, 440I)
+		*this.labelRecordsRead.Name = "labelRecordsRead"
+		*this.labelRecordsRead.Size = *new System.Drawing.Size(108I, 20I)
+		*this.labelRecordsRead.TabIndex = 3I
+		*this.labelRecordsRead.Text = "[RecordsRead]"
+		//
+		//listboxStates
+		//
+		*this.listboxStates.FormattingEnabled = *True
+		*this.listboxStates.ItemHeight = 20I
+		*this.listboxStates.Location = *new System.Drawing.Point(92I, 225I)
+		*this.listboxStates.Name = "listboxStates"
+		*this.listboxStates.Size = *new System.Drawing.Size(327I, 204I)
+		*this.listboxStates.TabIndex = 4I
+		//
+		//label1
+		//
+		*this.label1.AutoSize = *True
+		*this.label1.Location = *new System.Drawing.Point(92I, 83I)
+		*this.label1.Name = "label1"
+		*this.label1.Size = *new System.Drawing.Size(91I, 20I)
+		*this.label1.TabIndex = 5I
+		*this.label1.Text = "QuerySelect"
+		//
+		//label2
+		//
+		*this.label2.AutoSize = *True
+		*this.label2.Location = *new System.Drawing.Point(92I, 147I)
+		*this.label2.Name = "label2"
+		*this.label2.Size = *new System.Drawing.Size(102I, 20I)
+		*this.label2.TabIndex = 6I
+		*this.label2.Text = "QueryKeyFlds"
+		//
+		//label3
+		//
+		*this.label3.AutoSize = *True
+		*this.label3.Font = *new System.Drawing.Font("Source Sans Pro", 16, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (0 *As System.Byte))
+		*this.label3.Location = *new System.Drawing.Point(113I, 27I)
+		*this.label3.Name = "label3"
+		*this.label3.Size = *new System.Drawing.Size(406I, 28I)
+		*this.label3.TabIndex = 7I
+		*this.label3.Text = "Demonstrate AVR for .NET's OpenQueryFile"
+		*this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		//
+		//formMain
+		//
+		*this.AutoScaleDimensions = *new System.Drawing.SizeF(8, 20)
+		*this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		*this.ClientSize = *new System.Drawing.Size(645I, 500I)
+		*this.Controls.Add(*this.label3)
+		*this.Controls.Add(*this.label2)
+		*this.Controls.Add(*this.label1)
+		*this.Controls.Add(*this.listboxStates)
+		*this.Controls.Add(*this.labelRecordsRead)
+		*this.Controls.Add(*this.textboxQKeyFlds)
+		*this.Controls.Add(*this.textboxQSelect)
+		*this.Controls.Add(*this.buttonRead)
+		*this.Font = *new System.Drawing.Font("Source Sans Pro", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (0 *As System.Byte))
+		*this.Margin = *new System.Windows.Forms.Padding(4I)
+		*this.Name = "formMain"
+		*this.Text = "OpenQueryFile"
+		*this.ResumeLayout(*False)
+		*this.PerformLayout()
+	EndSr
+	
+	DclFld buttonRead Type(System.Windows.Forms.Button) Access(*Private) WithEvents(*Yes)
+	DclFld textboxQSelect Type(System.Windows.Forms.TextBox) Access(*Private) WithEvents(*Yes)
+	DclFld textboxQKeyFlds Type(System.Windows.Forms.TextBox) Access(*Private) WithEvents(*Yes)
+	DclFld labelRecordsRead Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld listboxStates Type(System.Windows.Forms.ListBox) Access(*Private) WithEvents(*Yes)
+	DclFld label1 Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld label2 Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld label3 Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	//Required by the Windows Form Designer
+	DclFld components Type(System.ComponentModel.IContainer) Inz(*Nothing)
+	
+	// Clean up any resources being used.
+	// "disposing" is true if managed resources should be disposed; otherwise, false.
+	BegSr Dispose Access(*Protected) Modifier(*Overrides)
+		DclSrParm disposing Type(*Boolean)
+
+		If (disposing *And (components *NE *Nothing))
+			components.Dispose()
+		EndIf
+			
+		*Base.Dispose(disposing)
+	EndSr
+	
+EndClass

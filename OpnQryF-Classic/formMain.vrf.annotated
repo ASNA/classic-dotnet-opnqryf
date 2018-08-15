@@ -1,0 +1,58 @@
+DclDiskFile Customer +
+            Type(*Input) + 
+            Org(*Indexed) +
+            DBDesc("*Public/DG NET Local") +
+            FileDesc("Examples/CMastNewL1") +
+            ImpOpen(*NO) +
+            Qryfilename("UNIQUE") +   
+            QryKeyFlds(Qkeys) +
+            QrySelect(Qselect)
+
+DclFld QKeys Type(*String) 
+DclFld QSelect Type(*String) 
+
+labelRecordsRead = ''
+ResetQueryParms()
+
+BEGSR buttonRead Click
+    QSelect = textboxQSelect.Text 
+    QKeys = textboxQKeys.Text 
+
+    Open Customer Err(*Extended)
+    If %Error
+        If *Err.Type = 1
+            MsgBox Title('A DB error occurred')+ 
+                   Msg('Desc: ' + *Err.Description)
+        Else 
+            MsgBox Title('An error occured') + 
+                   Msg('Desc: ' + *Err.Description)
+        EndIf 
+        LeaveSr 
+    EndIf 
+
+    ReadFile() 
+    Close Customer 
+    ResetQueryParms()
+ENDSR
+
+BegSr ResetQueryParms
+    QSelect = ""
+    QKeys = "*FILE"
+EndSr
+
+BegSr ReadFile 
+    DclFld CustomerEOF Type(*Ind) 
+    DclFld Counter Type(*Integer) Len(4)
+
+    listboxStates.ClearObj()
+    Counter = 0
+
+    Read Customer EOF(CustomerEOF) 
+    DoWhile (NOT CustomerEOF)
+        Counter = Counter + 1
+        listboxStates.AddItem(%Trim(CMCity) + ", " + CMState)
+        Read Customer EOF(CustomerEOF) 
+    EndDo 
+
+    labelRecordsRead.Caption = 'Records read: ' + %Trim(%EditC(Counter, "1"))
+EndSr
