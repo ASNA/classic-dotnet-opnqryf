@@ -30,7 +30,7 @@
         <a class='octothorpe' href='#section-1'>#</a>
       </div>
       <p><a href="https://github.com/ASNA/classic-dotnet-opnqryf">Return to repo</a></p>
-<h3>AVR for .NET program to read a file. v1.0</h3>
+<h3>AVR for .NET program to demonstrate OpnQryF v1.0</h3>
 <hr />
 <hr />
     </div>
@@ -130,9 +130,33 @@ files. </p>
 
         <span class="nx">Customer</span><span class="p">.</span><span class="nx">QryFileName</span> <span class="o">=</span> <span class="s1">&#39;*Unique&#39;</span>
         <span class="nx">Customer</span><span class="p">.</span><span class="nx">QrySelect</span> <span class="o">=</span> <span class="nx">textboxQSelect</span><span class="p">.</span><span class="nx">Text</span>
-        <span class="nx">Customer</span><span class="p">.</span><span class="nx">QryKeyFlds</span> <span class="o">=</span> <span class="nx">textboxQKeyFlds</span><span class="p">.</span><span class="nx">Text</span> 
+        <span class="nx">Customer</span><span class="p">.</span><span class="nx">QryKeyFlds</span> <span class="o">=</span> <span class="nx">textboxQKeyFlds</span><span class="p">.</span><span class="nx">Text</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>AVR for .NET uses exception handling to catch errors. 
+It's especially important to check for exception errors
+when you're using OpnQryF--it can be quite fiddly to get 
+right. This isn't the most graceful use of exception catching,
+but it's a good start. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Try</span> 
+            <span class="nx">Open</span> <span class="nx">Customer</span> 
+        <span class="nx">Catch</span> <span class="nx">exdb</span> <span class="nx">Type</span><span class="p">(</span><span class="nx">ASNA</span><span class="p">.</span><span class="nx">VisualRPG</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">.</span><span class="nx">DataGateException</span><span class="p">)</span> 
+            <span class="nx">MsgBox</span> <span class="nx">Title</span><span class="p">(</span><span class="s1">&#39;A database error occurred&#39;</span><span class="p">)</span> <span class="nx">Msg</span><span class="p">(</span><span class="nx">exdb</span><span class="p">.</span><span class="nx">Message</span><span class="p">)</span> 
+            <span class="nx">LeaveSr</span> 
+        <span class="nx">Catch</span>  <span class="nx">ex</span> <span class="nx">Type</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Exception</span><span class="p">)</span>
+            <span class="nx">msgBox</span> <span class="nx">ex</span><span class="p">.</span><span class="nx">GetType</span><span class="p">().</span><span class="nx">ToString</span><span class="p">()</span>
+            <span class="nx">MsgBox</span> <span class="nx">Title</span><span class="p">(</span><span class="s1">&#39;An error occurred&#39;</span><span class="p">)</span> <span class="nx">Msg</span><span class="p">(</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Message</span><span class="p">)</span> 
+            <span class="nx">LeaveSr</span> 
+        <span class="nx">EndTry</span> 
 
-        <span class="nx">Open</span> <span class="nx">Customer</span> 
         <span class="nx">ReadFile</span><span class="p">()</span>
         <span class="nx">Close</span> <span class="nx">Customer</span> 
     <span class="nx">EndSr</span>

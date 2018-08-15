@@ -1,6 +1,6 @@
 ﻿
 // [Return to repo](https://github.com/ASNA/classic-dotnet-opnqryf)
-// ### AVR for .NET program to read a file. v1.0
+// ### AVR for .NET program to demonstrate OpnQryF v1.0
 // ---
 // 
 // ---
@@ -68,7 +68,22 @@ BegClass formMain Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Ye
         Customer.QrySelect = textboxQSelect.Text
         Customer.QryKeyFlds = textboxQKeyFlds.Text 
 
-        Open Customer 
+        // AVR for .NET uses exception handling to catch errors. 
+        // It's especially important to check for exception errors
+        // when you're using OpnQryF--it can be quite fiddly to get 
+        // right. This isn't the most graceful use of exception catching,
+        // but it's a good start. 
+        Try 
+            Open Customer 
+        Catch exdb Type(ASNA.VisualRPG.Runtime.DataGateException) 
+            MsgBox Title('A database error occurred') Msg(exdb.Message) 
+            LeaveSr 
+        Catch  ex Type(System.Exception)
+            msgBox ex.GetType().ToString()
+            MsgBox Title('An error occurred') Msg(ex.Message) 
+            LeaveSr 
+        EndTry 
+
         ReadFile()
         Close Customer 
     EndSr
